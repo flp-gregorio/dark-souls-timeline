@@ -1,69 +1,64 @@
-# React + TypeScript + Vite
+# Dark Souls Timeline
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive visualization of the Dark Souls series timeline, exploring the deep lore from the Age of Ancients through the cycle of Fire and Dark.
 
-Currently, two official plugins are available:
+![Dark Souls Timeline Preview](src/assets/ds1_cover.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About
 
-## Expanding the ESLint configuration
+This project presents a chronological journey through the most significant events in the Dark Souls universe. Each timeline entry features:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Historical event descriptions
+- Original Japanese keywords and terminology
+- Dynamic background imagery
+- Atmospheric visual transitions
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- 📜 Interactive timeline navigation
+- 🎭 Misty reveal effects on hover
+- 🈯 Bilingual content (English/Japanese)
+- 📱 Responsive design
+- 🎮 Game-authentic visuals
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Tech Stack
+
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+
+## Live Demo
+
+Visit the timeline at: TBA
+
+## Project Structure
+
+```
+dark-souls-timeline/
+├── src/
+│   ├── assets/         # Game images and logos
+│   ├── components/     # Reusable UI components
+│   ├── pages/         # Main page components
+│   └── main.tsx       # Application entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Contributing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Found a lore inaccuracy or want to add more content? Feel free to:
+1. Fork the repository
+2. Create your feature branch
+3. Submit a pull request
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Credits
+
+- All Dark Souls content and imagery belongs to FromSoftware/Bandai Namco
+- Developed with respect for the original source material
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+*"Touch the darkness within me..."* 🔥
