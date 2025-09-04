@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 type TimelinePoint = {
     label: string;
@@ -150,51 +150,76 @@ const points: TimelinePoint[] = [
 ];
 
 
-//const maxTime = Math.max(...points.map((p) => p.time));
-
 
 const TimelinePage: React.FC = () => {
     document.title = "Dark Souls Timeline";
     const [activeImage, setActiveImage] = useState<string | null>(null);
+    const [visibleImage, setVisibleImage] = useState<string | null>(null);
+
+    useEffect(() => {
+        if (activeImage) {
+            setVisibleImage(activeImage);
+        } else {
+            const timer = setTimeout(() => setVisibleImage(null), 3000); // 3s matches your CSS transition
+            return () => clearTimeout(timer);
+        }
+    }, [activeImage]);
 
     return (
-        <div className="bg-neutral-950 text-black min-h-full p-10">
-            <h1 className="text-white text-7xl font-semibold uppercase tracking-wide font-garamond text-center z-10 sticky ">
+        <div className="bg-neutral-950 min-h-full p-10">
+            <h1 className="text-white font-semibold uppercase tracking-wide font-garamond text-right md:text-center z-10 sticky text-4xl md:text-7xl">
                 Dark Souls
             </h1>
-            <h2 className="text-white text-7xl font-semibold uppercase tracking-wide font-garamond text-center z-10 sticky ">
-                 Timeline
+            <h2 className="text-white font-semibold uppercase tracking-wide font-garamond text-right md:text-center z-10 sticky text-4xl md:text-7xl">
+                Timeline
             </h2>
+            <small className="block text-amber-700 font-bold uppercase tracking-widest font-garamond text-right md:text-center z-10 sticky cursor-pointer"
+                onClick={() => window.location.href = '/'}>
+                Return
+            </small>
             {/* Image Background  */}
             <div className="fixed inset-0 z-0">
                 <div
                     className={`w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none
-                transition-all duration-2000 ease-in-out left-0 top-0 z-0`}
+          transition-all duration-3000 ease-in-out left-0 top-0 z-0`}
                     style={{
-                        backgroundImage: `url(${activeImage || ''})`,
-                        filter: activeImage ? 'blur(0px)' : 'blur(100px)',
+                        backgroundImage: visibleImage ? `url(${visibleImage})` : "none",
+                        filter: activeImage ? "blur(0px)" : "blur(100px)",
                         opacity: activeImage ? 0.75 : 0,
-                        transform: activeImage ? 'scale(.95)' : 'scale(.3)',
-                        transition: 'all 2s ease-in-out',
-                        boxShadow: activeImage ? 'inset 100px 75px 20px 20px rgba(10, 10, 10, 1), inset -100px -75px 20px 20px rgba(10, 10, 10, 1)' : 'none'
+                        transition: "all 3s ease-in-out",
+                        boxShadow: activeImage
+                            ? "inset 150px 100px 40px 40px rgba(10, 10, 10, 1), inset -150px -100px 40px 40px rgba(10, 10, 10, 1)"
+                            : "none",
                     }}
                 />
             </div>
 
             {/* Timeline */}
-            <div className="relative max-w-7xl my-10 mx-auto after:content-[''] after:absolute after:top-0 after:left-1/2 after:w-1.5 after:h-full after:bg-white">
+            <div className="relative w-full my-10 mx-auto after:content-[''] after:absolute after:top-0 after:md:left-1/2 after:md:left-0  after:w-1.5 after:h-full after:bg-white">
                 {points.map((point) => (
                     <div key={point.time}
                     >
                         {/* Container */}
-                        <div className={`py-2.5 px-12 max-w-[50%] relative ${point.time % 2 === 0 ? "left-0" : "left-1/2"} z-10 group transition-all transition-duration-500`}
-                            onMouseEnter={() => point.image && setActiveImage(point.image)}
-                            onMouseLeave={() => setActiveImage(null)}>
+                        <div className={`${point.time % 2 === 0 ? "left-0" : "md:left-1/2"} 
+                            relative py-2.5 left-5 md:left-0 md:px-12 md:max-w-[50%] w-full z-10 group transition-all transition-duration-500 `}>
                             {/* Text-Box */}
-                            <div className="bg-white relative rounded-md text-lg py-2.5 px-6">
-                                <h2>{point.label}</h2>
-                                <small>{point.time}</small>
-                                <p>{point.description}</p>
+                            <div className="bg-white relative text-lg py-2.5 px-6 border-amber-700 border-6 "
+
+                                onMouseEnter={() => point.image && setActiveImage(point.image)}
+                                onMouseLeave={() => setActiveImage(null)}>
+                                <h3 className="font-garamond text-2xl font-bold uppercase tracking-widest text-amber-700 drop-shadow-glow-dark mb-2">
+                                    {point.label}
+                                </h3>
+                                <hr className="text-amber-700"></hr>
+                                <p className="font-serif text-neutral-800 text-base leading-relaxed tracking-wide italic drop-shadow-glow-dark">
+                                    {point.description}
+                                </p>
+                                <h4 className="inline-block text-amber-800 text-xs uppercase font-bold mr-2 px-1.5 py-0.5 tracking-wide mt-2">Keywords:</h4>
+                                {point.keywords.map((keyword, index) => (
+                                    <span key={index} className="inline-block bg-amber-200 text-amber-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded mt-2">
+                                        {keyword}
+                                    </span>
+                                ))}
                             </div>
                         </div>
                     </div>
