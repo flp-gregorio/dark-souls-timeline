@@ -1,64 +1,57 @@
 # Dark Souls Timeline
 
-An interactive visualization of the Dark Souls series timeline, exploring the deep lore from the Age of Ancients through the cycle of Fire and Dark.
+![Demo](https://img.shields.io/badge/demo-GitHub%20Pages-blue) ![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey) ![Repo](https://img.shields.io/badge/repo-dark--souls--timeline-black)
 
-![Dark Souls Timeline Preview](src/assets/ds1_cover.png)
+A bite-sized, slightly smoldering interactive timeline of Dark Souls lore — for people who read item descriptions like scripture and whisper “Praise the Sun” to their monitors.
 
-## About
+Live demo: https://yourusername.github.io/dark-souls-timeline  (replace `yourusername` with the repo owner)
 
-This project presents a chronological journey through the most significant events in the Dark Souls universe. Each timeline entry features:
+What you'll find
+- Chronological entries covering major events from the Age of Ancients onward.
+- Original Japanese keywords preserved for lore purists.
+- Rich imagery and atmospheric visuals to set the mood (no spoilers, mostly ambiance).
+- Small, tasteful nods to the community: NG+, bonfires, embers, and mild existential despair.
 
-- Historical event descriptions
-- Original Japanese keywords and terminology
-- Dynamic background imagery
-- Atmospheric visual transitions
+Why this exists
+- Because someone had to make a timeline we could stare at between boss attempts.
+- For lore dives, discussion starters, or humbling reminders that you missed an item description.
 
-## Features
+Contributing
+- Corrections, additions, or meme-level improvements welcome via PRs or issues.
+- Keep content respectful of the IP owners — this is a fan/portfolio project.
 
-- 📜 Interactive timeline navigation
-- 🎭 Misty reveal effects on hover
-- 🈯 Bilingual content (English/Japanese)
-- 📱 Responsive design
-- 🎮 Game-authentic visuals
+Credits & License
+- Images and lore belong to FromSoftware / Bandai Namco.
+- Code licensed MIT — see LICENSE.
 
-## Tech Stack
+Contact
+- Repo owner: link to your GitHub profile (add when publishing).
+```// filepath: c:\Users\Felipe\Documents\Portfolio\dark-souls-timeline\README.md
+# Dark Souls Timeline
 
-- React
-- TypeScript
-- Tailwind CSS
-- Vite
+![Demo](https://img.shields.io/badge/demo-GitHub%20Pages-blue) ![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey) ![Repo](https://img.shields.io/badge/repo-dark--souls--timeline-black)
 
-## Live Demo
+A bite-sized, slightly smoldering interactive timeline of Dark Souls lore — for people who read item descriptions like scripture and whisper “Praise the Sun” to their monitors.
 
-Visit the timeline at: TBA
+Live demo: https://yourusername.github.io/dark-souls-timeline  (replace `yourusername` with the repo owner)
 
-## Project Structure
+What you'll find
+- Chronological entries covering major events from the Age of Ancients onward.
+- Original Japanese keywords preserved for lore purists.
+- Rich imagery and atmospheric visuals to set the mood (no spoilers, mostly ambiance).
+- Small, tasteful nods to the community: NG+, bonfires, embers, and mild existential despair.
 
-```
-dark-souls-timeline/
-├── src/
-│   ├── assets/         # Game images and logos
-│   ├── components/     # Reusable UI components
-│   ├── pages/         # Main page components
-│   └── main.tsx       # Application entry point
-```
+Why this exists
+- Because someone had to make a timeline we could stare at between boss attempts.
+- For lore dives, discussion starters, or humbling reminders that you missed an item description.
 
-## Contributing
+Contributing
+- Corrections, additions, or meme-level improvements welcome via PRs or issues.
+- Keep content respectful of the IP owners — this is a fan/portfolio project.
 
-Found a lore inaccuracy or want to add more content? Feel free to:
-1. Fork the repository
-2. Create your feature branch
-3. Submit a pull request
+Credits & License
+- Images and lore belong to FromSoftware / Bandai Namco.
+- Code licensed MIT — see LICENSE.
 
-## Credits
-
-- All Dark Souls content and imagery belongs to FromSoftware/Bandai Namco
-- Developed with respect for the original source material
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-*"Touch the darkness within me..."* 🔥
+Contact
+- Repo owner: link to your GitHub profile
