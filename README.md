@@ -1,5 +1,7 @@
 # Dark Souls Timeline
 
+![Dark Souls. Praise the Sun.](src/assets/ds1_logo.png)
+
 ![Demo](https://img.shields.io/badge/demo-GitHub%20Pages-blue) ![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey) ![Repo](https://img.shields.io/badge/repo-dark--souls--timeline-black)
 
 A bite-sized, slightly smoldering interactive timeline of Dark Souls lore — for people who read item descriptions like scripture and whisper “Praise the Sun” to their monitors.
