@@ -4,7 +4,7 @@
 
 A bite-sized, slightly smoldering interactive timeline of Dark Souls lore — for people who read item descriptions like scripture and whisper “Praise the Sun” to their monitors.
 
-Live demo: https://yourusername.github.io/dark-souls-timeline  (replace `yourusername` with the repo owner)
+Live demo: TBA
 
 What you'll find
 - Chronological entries covering major events from the Age of Ancients onward.
